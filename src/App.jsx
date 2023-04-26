@@ -1,10 +1,9 @@
 import './App.css'
-
-import responseMovies from './mocks/with-results.json'
+import { Movies } from './components/Movies'
+import { useMovies } from './hooks/useMovies'
 
 function App() {
-  const movies = responseMovies.Search
-  const hasMovies = movies.length > 0
+  const { movies } = useMovies()
 
   return (
     <div className='page'>
@@ -12,24 +11,12 @@ function App() {
         <h1>Search Movie App</h1>
         <form className='form'>
           <input type='text' placeholder='Avengers, Star Wars, The Matrix' />
-          <button>Search</button>
+          <button className='searchButton'>Search</button>
         </form>
       </header>
 
       <main>
-        {hasMovies ? (
-          <ul className='pelis'>
-            {movies.map((movie) => (
-              <li className='peli' key={movie.imdbID}>
-                <h2 className='movie-title'>{movie.Title}</h2>
-                <p>{movie.Year}</p>
-                <img src={movie.Poster} alt={movie.Title} />
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No movies found</p>
-        )}
+        <Movies movies={movies} />
       </main>
     </div>
   )

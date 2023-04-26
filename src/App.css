@@ -7,9 +7,6 @@ padding: 0;
 box-sizing: border-box;
 }
 
-body {
-  background: rgba(240, 241, 240, 0.184);
-}
 
 header {
   width: 100%;
@@ -68,7 +65,8 @@ form {
   padding: 2rem;
   border-radius: .6rem;
   background: #fff;
-  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.008);
+  border: 1px solid rgba(128, 128, 128, .111);
   
 }
 
@@ -77,4 +75,19 @@ form {
  white-space: nowrap;
   overflow: hidden;
  text-overflow: ellipsis;
+}
+
+.searchButton{
+  padding: .7rem 2rem;
+  border-radius: .5rem;
+  border: 1px solid rgba(85, 84, 84, 0.521);
+  cursor: pointer;
+  background: white;
+  
+}
+
+.searchButton:hover {
+  
+  background: #f2f2f2;
+  
 }
